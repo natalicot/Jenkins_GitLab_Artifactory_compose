@@ -1,4 +1,4 @@
-version: '3.1'
+version: '2.0'
 
 
 services:
@@ -19,7 +19,6 @@ services:
       - "gitlab_data:/var/opt/gitlab"
     ports:
       - "8081:80"
-      - "22:22"
 
   artifactory:
     image: docker.bintray.io/jfrog/artifactory-oss:latest
@@ -34,10 +33,10 @@ services:
 
 volumes: 
   jenkins_home1:
-    external: true
+    external: false
   gitlab_data:
-    external: true
+    external: false
   gitlab_conf:
-    external: true
+    external: false
   artifactory_conf:
-    external: true
+    external: false
